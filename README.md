@@ -27,7 +27,7 @@ _(Note: Requires `react >= 18.0.0` and `react-native >= 0.72.0`)_
 
 ---
 
-## 🛠 Core Utilities Explained
+## 🛠 Core Utilities
 
 The design system exposes several specialized utilities to architect your app's presentation layer seamlessly.
 
