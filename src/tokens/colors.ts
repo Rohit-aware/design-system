@@ -13,7 +13,7 @@ export const baseLightColors = {
   success: "#43A047",
   card: "#FFFFFF",
   overlay: "rgba(0,0,0,0.4)",
-} as const;
+};
 
 export const baseDarkColors = {
   background: "#0A0A0A",
@@ -30,6 +30,6 @@ export const baseDarkColors = {
   success: "#66BB6A",
   card: "#1A1A1A",
   overlay: "rgba(0,0,0,0.7)",
-} as const;
+};
 
 export type BaseColors = typeof baseLightColors;
