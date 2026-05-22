@@ -58,3 +58,12 @@ export type {
 } from "./utils";
 
 export { buildColorScaleMap } from "./colors";
+
+export { commonStyles, createCommonStyles, layoutStyles, spacingStyles, shadowStyles } from "./styles";
+export type {
+  CommonStyles,
+  CommonLayoutStyles,
+  CommonSpacingStyles,
+  CommonShadowStyles,
+  ShadowParams,
+} from "./styles";

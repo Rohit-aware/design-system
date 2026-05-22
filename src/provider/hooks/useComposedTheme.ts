@@ -3,9 +3,10 @@ import type { ColorScaleMap, Theme } from "../../types";
 import { buildAccessibilityInfo } from "../../utils/accessibility/accessibility";
 import { resolveResponsive } from "../../utils/layout/scaling";
 import type { LayoutInfo, AccessibilitySnapshot } from "../../utils";
+import { commonStyles } from "../../styles/common";
 
 export function useComposedTheme<TColors extends ColorScaleMap<string>>(
-  baseTheme: Omit<Theme<TColors>, "layout" | "accessibility" | "responsive">,
+  baseTheme: Omit<Theme<TColors>, "layout" | "accessibility" | "responsive" | "commonStyles">,
   layout: LayoutInfo,
   a11ySnapshot: AccessibilitySnapshot
 ): Theme<TColors> {
@@ -18,6 +19,6 @@ export function useComposedTheme<TColors extends ColorScaleMap<string>>(
     const responsive = (values: Parameters<Theme<TColors>["responsive"]>[0]): number =>
       resolveResponsive(values, layout.breakpoint);
 
-    return { ...baseTheme, layout, accessibility, responsive };
+    return { ...baseTheme, layout, accessibility, responsive, commonStyles };
   }, [baseTheme, layout, accessibility]);
 }
