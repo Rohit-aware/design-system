@@ -2,6 +2,7 @@ import type { ViewStyle } from "react-native";
 import type { LayoutInfo, ResponsiveValue, A11yInfo } from "../utils";
 import type { BaseColors } from "../tokens/colors";
 import type { ColorMap, ColorScaleMap } from "../colors/types";
+import type { CommonStyles } from "../styles/common/types";
 
 export type { ColorMap, ColorScaleMap };
 
@@ -52,6 +53,7 @@ export type Theme<TColors extends ColorScaleMap<string>, TShadowKeys extends str
   layout: LayoutInfo;
   accessibility: A11yInfo;
   responsive: (values: ResponsiveValue<number>) => number;
+  commonStyles: CommonStyles;
 };
 
 export type ProjectThemeConfig<
@@ -70,6 +72,6 @@ export type ProjectTheme<
   TColors extends ColorScaleMap<string>,
   TShadowKeys extends string = never
 > = {
-  light: Omit<Theme<TColors, TShadowKeys>, "layout" | "accessibility" | "responsive">;
-  dark: Omit<Theme<TColors, TShadowKeys>, "layout" | "accessibility" | "responsive">;
+  light: Omit<Theme<TColors, TShadowKeys>, "layout" | "accessibility" | "responsive" | "commonStyles">;
+  dark: Omit<Theme<TColors, TShadowKeys>, "layout" | "accessibility" | "responsive" | "commonStyles">;
 };
